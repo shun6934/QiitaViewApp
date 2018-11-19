@@ -16,6 +16,7 @@
 		2105588D1ED44D860042608E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210558831ED44D460042608E /* Alamofire.framework */; };
 		2105588E1ED44D920042608E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210558871ED44D460042608E /* SwiftyJSON.framework */; };
 		210558911ED44EB10042608E /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210558901ED44EB10042608E /* ArticleListViewController.swift */; };
+		21C793F521A2D77100D4C8AC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C793F421A2D77100D4C8AC /* NewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		210558841ED44D460042608E /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
 		210558871ED44D460042608E /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		210558901ED44EB10042608E /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
+		21C793F421A2D77100D4C8AC /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				210558521ED44AE30042608E /* AppDelegate.swift */,
 				210558901ED44EB10042608E /* ArticleListViewController.swift */,
+				21C793F421A2D77100D4C8AC /* NewsViewController.swift */,
 				210558561ED44AE30042608E /* Main.storyboard */,
 				210558591ED44AE30042608E /* Assets.xcassets */,
 				2105585B1ED44AE30042608E /* LaunchScreen.storyboard */,
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21C793F521A2D77100D4C8AC /* NewsViewController.swift in Sources */,
 				210558531ED44AE30042608E /* AppDelegate.swift in Sources */,
 				210558911ED44EB10042608E /* ArticleListViewController.swift in Sources */,
 			);
@@ -459,11 +463,13 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = QiitaViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shunichi.QiitaViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -477,11 +483,13 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = QiitaViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shunichi.QiitaViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
