@@ -15,7 +15,7 @@ class ArticleListViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var table: UITableView!
     
     var articles: [[String: String?]] = []
-    var url = URL(string: "http://qiita.com/items")!
+    var selectUrl: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,7 @@ class ArticleListViewController: UIViewController, UITableViewDataSource, UITabl
                     json.forEach { (_, json) in
                         let article: [String: String?] = [
                         "title": json["title"].string,
+                        "url": json["url"].string,
                         "userId": json["user"]["id"].string
                         ]
                         self.articles.append(article)
@@ -55,11 +56,14 @@ class ArticleListViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
-    func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url)
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newArticle = articles[indexPath.row]
+        selectUrl = newArticle["url"]!
+        performSegue(withIdentifier: "toNewsViewController", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let NVC: NewsViewController = (segue.destination as? NewsViewController)!
+        NVC.url = selectUrl
     }
 }

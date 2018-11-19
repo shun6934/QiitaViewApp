@@ -6,15 +6,21 @@
 //  Copyright © 2018年 shunichi. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import WebKit
 
-class NewsViewController: UIViewController {
+class NewsViewController: UIViewController, WKUIDelegate {
     
     var webView: WKWebView!
     var topPadding:CGFloat = 0
     var url: String!
+    
+    override func loadView() {
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        view = webView
+    }
     
     override func viewDidAppear(_ animated: Bool){
         
